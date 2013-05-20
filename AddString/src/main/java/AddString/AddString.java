@@ -23,18 +23,17 @@ public class AddString {
             //convert string to int
             int [] arr = convertStringToInt(result);
             //catch exception when string have a negative
-           /* String check = print(checkNegative(arr));
+            String check = checkNegative(arr);
             if(check != null)
-            for(int i = 0; i < arr.length; i++)
-                if(arr[i] < 0)
-                    throw new RuntimeException("negative not allowed: " + check);*/
+                for(int i = 0; i < arr.length; i++)
+                    if(arr[i] < 0)
+                        throw new RuntimeException("negative not allowed: " + check.substring(4, check.length()-1));
             //Call function calculator Sum
             return calSum(arr);
         }
     }
-
+    //function for convert string to int
     public static int[] convertStringToInt(String[] numbers){
-
         int [] arr = new int [numbers.length];
         for(int i = 0; i<numbers.length; i++){
             if(numbers[i].isEmpty())
@@ -45,7 +44,8 @@ public class AddString {
                 arr[i] = 0;
         }
         return arr;
-        }
+    }
+    //funtion calculation sum
     public static int  calSum(int [] arr){
         int sum = 0, i;
         for (i = 0; i < arr.length; i++){
@@ -53,21 +53,16 @@ public class AddString {
         }
         return sum;
     }
-    /*public static int[] checkNegative(int []arr){
-        int i, j = 0 ;
-        int [] negative = new int[arr.length];
+    //funtion for check number is a negative?
+    public static String checkNegative(int []arr){
+        int i;
+        String result = null;
         for (i = 0; i < arr.length; i++)
             if (arr[i] < 0){
-                negative[j++] = arr[i];
+                result += arr[i] + " ";
             }
-        return negative;
-    }
-    private static String print(int[] negative) {
-        String result = null;
-        for(int i = 0; i < negative.length; i++)
-            result += negative[i] + " ";
         return result;
-    }*/
+    }
 }
 
 

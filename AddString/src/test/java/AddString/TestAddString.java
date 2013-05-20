@@ -44,16 +44,14 @@ public class TestAddString {
         assertEquals(9, AddString.Add("//.\n;2;3.4") );
     }
 
-/*
     @Test
     public void returnExceptionWhenStringHasANegative(){
         try{
-            AddString.Add("5,-4,5,2");
+            AddString.Add("5,-4,-55,2");
         }catch (RuntimeException e){
-            assertEquals("negative not allowed: -4", e.getMessage());
+            assertEquals("negative not allowed: -4 -55", e.getMessage());
         }
     }
-*/
     @Test
     public void shouldIgnoreWhenStringHaveANumberBiggerThan1000(){
         assertEquals(10, AddString.Add("1,2,3,4;1001"));
